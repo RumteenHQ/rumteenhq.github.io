@@ -1,135 +1,362 @@
-<!DOCTYPEhtml>
-  <htmllang="en">
+<!DOCTYPE html>
+<html lang="en">
 
-    <head><metacharset="UTF-8" /><metaname="viewport"content="width=device-width, initial-scale=1.0" />
-      <title>RumteenHQ Portfolio</title>
-      <style>
-        body {
-          font-family: Arial, sans-serif;
-          margin: 0;
-          padding: 0;
-          line-height: 1.6;
-          background: #f5f5f5;
-          color: #222;
-        }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RumteenHQ Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <style>
+      *, *::before, *::after {
+        box-sizing: border-box;
+      }
 
-        header {
-          background: #222;
-          color: white;
-          padding: 40px20px;
-          text-align: center;
-        }
+      body {
+        font-family: 'Inter', Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        line-height: 1.7;
+        background: #0d1117;
+        color: #c9d1d9;
+      }
 
-        main {
-          max-width: 900px;
-          margin: 0 auto;
-          padding: 20px;
-        }
+      /* ── Header ─────────────────────────────── */
+      header {
+        background: #161b22;
+        border-bottom: 1px solid #30363d;
+        padding: 60px 24px 48px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
 
-        section {
-          background: white;
-          margin-bottom: 20px;
-          padding: 20px;
-          border-radius: 8px;
-        }
+      header::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(ellipse 80% 60% at 50% -20%, rgba(88, 166, 255, 0.12), transparent);
+        pointer-events: none;
+      }
 
-        a {
-          color: #0056b3;
-        }
-      </style>
-    </head>
+      header h1 {
+        margin: 0 0 12px;
+        font-size: clamp(1.8rem, 4vw, 2.6rem);
+        font-weight: 700;
+        color: #e6edf3;
+        letter-spacing: -0.5px;
+      }
 
-    <body>
-      <header>
-        <h1>Rumteen Tebyanian, CISSP</h1>
-        <p>AI GRC Practitioner focused on helping organizations responsibly evaluate, document, and govern AI systems.</p>
-      </header>
-      <main>
-        <section>
-          <h2>About Me</h2>
-          <!---
-          <p>Write a short paragraph about who you are, what you are learning, and what kind of work interests you.</p>
-          <p>I am building a portfolio to showcase my projects, technical skills, and learning progress.
-            My interests include web development, cybersecurity, data analysis, and automation. </p> -->
-            <p>My work focuses on practical AI governance: identifying AI risks, documenting AI use cases, assessing controls, reviewing vendor AI systems, supporting human oversight, and preparing governance evidence for leadership review.</p>
-            <p>I am especially interested in how organizations can safely deploy AI systems that affect people, business decisions, financial outcomes, compliance obligations, and trust.</p>
-            <p>My goal is to support responsible AI adoption by helping organizations make AI systems more governable, explainable, fair, accountable, monitored, and compliant.</p>
-        </section>
-        <section>
-          <h2>Featured Projects</h2>
+      header p {
+        margin: 0;
+        font-size: 1rem;
+        color: #8b949e;
+        max-width: 560px;
+        margin-inline: auto;
+      }
 
-          <div>
-            <h3>Case Study: AI Governance Assessment of a High Risk Loan Underwriting System</h3>
-            <p>AI Governance portfolio case study assessing a high-risk automated loan underwriting system.
-            <p>Tools used: VerifyWise, EU AI Act, NIST AI RMF, and ISO/IEC 42001 concepts.</p>
-            <a href="https://github.com/rumteenhq/AI-Governance-Portfolio-Project-Automated-Loan-Underwriting-System">View Project</a>
+      /* ── Layout ─────────────────────────────── */
+      main {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 32px 20px 60px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      /* ── Cards ──────────────────────────────── */
+      section {
+        background: #161b22;
+        border: 1px solid #30363d;
+        border-radius: 10px;
+        padding: 28px 32px;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      section:hover {
+        border-color: #58a6ff44;
+        box-shadow: 0 0 0 1px #58a6ff22, 0 4px 20px rgba(0, 0, 0, 0.4);
+      }
+
+      /* ── Headings ───────────────────────────── */
+      h2 {
+        margin: 0 0 16px;
+        font-size: 1.15rem;
+        font-weight: 600;
+        color: #e6edf3;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      h2::before {
+        content: '';
+        display: inline-block;
+        width: 3px;
+        height: 1em;
+        background: #58a6ff;
+        border-radius: 2px;
+        flex-shrink: 0;
+      }
+
+      h3 {
+        margin: 0 0 8px;
+        font-size: 1rem;
+        font-weight: 600;
+        color: #e6edf3;
+      }
+
+      /* ── Paragraphs ─────────────────────────── */
+      p {
+        margin: 0 0 10px;
+        color: #8b949e;
+        font-size: 0.95rem;
+      }
+
+      p:last-child { margin-bottom: 0; }
+
+      /* ── Links ──────────────────────────────── */
+      a {
+        color: #58a6ff;
+        text-decoration: none;
+        transition: color 0.15s ease;
+      }
+
+      a:hover {
+        color: #79c0ff;
+        text-decoration: underline;
+      }
+
+      /* ── Projects ───────────────────────────── */
+      .project-card {
+        background: #0d1117;
+        border: 1px solid #30363d;
+        border-radius: 8px;
+        padding: 18px 20px;
+        margin-bottom: 14px;
+        transition: border-color 0.2s ease;
+      }
+
+      .project-card:last-child { margin-bottom: 0; }
+
+      .project-card:hover {
+        border-color: #3fb95066;
+      }
+
+      .project-card h3 {
+        color: #e6edf3;
+        font-size: 0.95rem;
+        line-height: 1.4;
+      }
+
+      .project-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 12px;
+      }
+
+      .project-links a {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: #3fb950;
+        border: 1px solid #3fb95044;
+        padding: 4px 12px;
+        border-radius: 20px;
+        transition: background 0.15s ease, border-color 0.15s ease;
+      }
+
+      .project-links a:hover {
+        background: #3fb95014;
+        border-color: #3fb950;
+        text-decoration: none;
+        color: #56d364;
+      }
+
+      .tools-used {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.78rem;
+        color: #6e7681;
+        margin: 6px 0 0;
+      }
+
+      /* ── Skills ─────────────────────────────── */
+      ul {
+        margin: 0;
+        padding: 0 0 0 20px;
+        color: #8b949e;
+        font-size: 0.92rem;
+      }
+
+      li {
+        margin-bottom: 8px;
+        padding-left: 4px;
+        line-height: 1.6;
+      }
+
+      li::marker {
+        color: #58a6ff;
+      }
+
+      li strong {
+        color: #c9d1d9;
+        font-weight: 500;
+      }
+
+      /* ── Certifications ─────────────────────── */
+      .cert-verify {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 0.82rem;
+        font-weight: 500;
+        color: #58a6ff;
+        border: 1px solid #58a6ff33;
+        padding: 4px 12px;
+        border-radius: 20px;
+        margin-bottom: 16px;
+        transition: background 0.15s ease;
+      }
+
+      .cert-verify:hover {
+        background: #58a6ff11;
+        text-decoration: none;
+      }
+
+      .cert-in-progress {
+        color: #6e7681;
+        font-style: italic;
+      }
+
+      /* ── Contact ────────────────────────────── */
+      .contact-list {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 0;
+      }
+
+      .contact-list li {
+        margin: 0;
+        padding: 0;
+      }
+
+      .contact-list a {
+        display: inline-block;
+        font-size: 0.9rem;
+        font-weight: 500;
+        padding: 6px 16px;
+        border: 1px solid #30363d;
+        border-radius: 6px;
+        color: #c9d1d9;
+        transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+      }
+
+      .contact-list a:hover {
+        border-color: #58a6ff;
+        color: #58a6ff;
+        background: #58a6ff0d;
+        text-decoration: none;
+      }
+
+      /* ── Footer ─────────────────────────────── */
+      footer {
+        text-align: center;
+        padding: 24px;
+        font-size: 0.8rem;
+        color: #484f58;
+        border-top: 1px solid #21262d;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Rumteen Tebyanian, CISSP</h1>
+      <p>AI GRC Practitioner focused on helping organizations responsibly evaluate, document, and govern AI systems.</p>
+    </header>
+
+    <main>
+
+      <!-- About -->
+      <section>
+        <h2>About Me</h2>
+        <p>My work focuses on practical AI governance: identifying AI risks, documenting AI use cases, assessing controls, reviewing vendor AI systems, supporting human oversight, and preparing governance evidence for leadership review.</p>
+        <p>I am especially interested in how organizations can safely deploy AI systems that affect people, business decisions, financial outcomes, compliance obligations, and trust.</p>
+        <p>My goal is to support responsible AI adoption by helping organizations make AI systems more governable, explainable, fair, accountable, monitored, and compliant.</p>
+      </section>
+
+      <!-- Projects -->
+      <section>
+        <h2>Featured Projects</h2>
+
+        <div class="project-card">
+          <h3>Case Study: AI Governance Assessment of a High-Risk Loan Underwriting System</h3>
+          <p>AI Governance portfolio case study assessing a high-risk automated loan underwriting system.</p>
+          <p class="tools-used">Tools: VerifyWise · EU AI Act · NIST AI RMF · ISO/IEC 42001</p>
+          <div class="project-links">
+            <a href="https://github.com/rumteenhq/AI-Governance-Portfolio-Project-Automated-Loan-Underwriting-System">↗ View Project</a>
           </div>
+        </div>
 
-          <div>
-
-            <div>
-              <h3>OpenClaw VPS Hardening and Upgrade Runbook</h3>
-              <p>
-                Practical security and operations guides for self hosted OpenClaw gateways on a VPS. Covers a safe, repeatable
-                maintenance workflow (backup, update, restart, verify, rollback) plus baseline hardening to reduce exposure without breaking the bot.
-              </p>
-              <p>Tools used: Ubuntu Linux, VPS administration, Bash automation, OpenClaw CLI</p>
-              <a href="https://rumteenhq.substack.com/p/lets-update-openclaw-without-breaking">Upgrade Playbook</a>
-              <span> | </span>
-              <a href="https://muddy-sweatshirt-3fe.notion.site/OpenClaw-Guide-VPS-Hardening-08fe0673e31e829b880401f0f1573f60">VPS
-                Hardening Guide</a>
-            </div>
-
-            <!--
-          <div>
-            <h3>OpenClaw Upgrade Playbook for VPS Deployments</h3>
-            <p>
-              A practical “safe upgrade” playbook for self-hosted OpenClaw on a Virtual Private Server (VPS). It teaches a repeatable update workflow (backup > update > restart > verify > rollback) so hobbyists can keep their gateway and OS patched for security without accidentally taking the bot offline or losing critical state (config, credentials, cron jobs, pairings). -->
-              <!--A short description of this project and what you learned from building it.
-              A short description of what the project does and what problem it solves. -->
-           <!-- </p>
-            <p>Tools used: Ubuntu Linux, VPS administration, Bash automation, OpenClaw CLI</p>
-            <a href="https://rumteenhq.substack.com/p/lets-update-openclaw-without-breaking">View Project</a>
+        <div class="project-card">
+          <h3>OpenClaw VPS Hardening and Upgrade Runbook</h3>
+          <p>Practical security and operations guides for self-hosted OpenClaw gateways on a VPS. Covers a safe, repeatable maintenance workflow (backup, update, restart, verify, rollback) plus baseline hardening to reduce exposure without breaking the bot.</p>
+          <p class="tools-used">Tools: Ubuntu Linux · VPS Administration · Bash Automation · OpenClaw CLI</p>
+          <div class="project-links">
+            <a href="https://rumteenhq.substack.com/p/lets-update-openclaw-without-breaking">↗ Upgrade Playbook</a>
+            <a href="https://muddy-sweatshirt-3fe.notion.site/OpenClaw-Guide-VPS-Hardening-08fe0673e31e829b880401f0f1573f60">↗ VPS Hardening Guide</a>
           </div>
-        -->
-        </section>
-        <section>
-          <h2>Skills</h2>
-          <ul>
-            <li>Programming: SQL, Python, Java, C#, BASH, PowerShell, ASP.NET, HTML, JavaScript, JSON, UML</li>
-            <li>ICAM: Oracle Identity Suite (OAM, OIM, OUD), Federated Access Management and Single Sign-On (SAML, OAuth/OIDC, ADFS/wsFed, WebGate agent), Directory Services (LDAP/AD), Microsoft Identity Manager (MIM), NIST 800-63, HSPD-12, PingFederate, Okta, System Administration</li>
-          </ul>
-        </section>
+        </div>
+      </section>
 
-        <section>
-          <h2>Certifications</h2>
-          <a href="https://www.credly.com/users/rumteen-tebyanian/badges#credly">Verify via Credly</a>
-          <ul>
-            <li>ISC2, Certified Information Systems Security Professional (CISSP)</li>
-            <li>CompTIA, Security+ ce Certification</li>
-            <li>CSA, Certificate of Cloud Security Knowledge (CCSK)</li>
-            <li>AWS, Certified Cloud Practitioner</li>
-            <li>(In Progress) Anthropic, Claude Certified Cloud Architect</li>
-            <li>(In Progress) Okta, Certified Professional</li>
-          </ul>
-        </section>
-        
-        <section>
-          <h2>Contact</h2>
-          <p>You can connect with me here:</p>
-          <ul>
-            <li>
-              <a href="https://github.com/RumteenHQ">GitHub</a>
-            </li>
-            <li>
-              <a href="https://www.linkedin.com/in/rumteenhq">LinkedIn</a>
-            </li>
-            <li>
-              <a href="mailto:rtebyanian@deloitte.com">Email</a>
-            </li>
-          </ul>
-        </section>
-      </main>
-    </body>
+      <!-- Skills -->
+      <section>
+        <h2>Skills</h2>
+        <ul>
+          <li><strong>Programming:</strong> SQL, Python, Java, C#, Bash, PowerShell, ASP.NET, HTML, JavaScript, JSON, UML</li>
+          <li><strong>ICAM:</strong> Oracle Identity Suite (OAM, OIM, OUD), Federated Access Management &amp; SSO (SAML, OAuth/OIDC, ADFS/wsFed, WebGate), Directory Services (LDAP/AD), Microsoft Identity Manager (MIM), NIST 800-63, HSPD-12, PingFederate, Okta, System Administration</li>
+        </ul>
+      </section>
 
-    </html>
+      <!-- Certifications -->
+      <section>
+        <h2>Certifications</h2>
+        <a class="cert-verify" href="https://www.credly.com/users/rumteen-tebyanian/badges#credly">✦ Verify via Credly</a>
+        <ul>
+          <li>ISC2 — Certified Information Systems Security Professional (CISSP)</li>
+          <li>CompTIA — Security+ ce Certification</li>
+          <li>CSA — Certificate of Cloud Security Knowledge (CCSK)</li>
+          <li>AWS — Certified Cloud Practitioner</li>
+          <li class="cert-in-progress">Anthropic — Claude Certified Architect <em>(In Progress)</em></li>
+          <li class="cert-in-progress">Okta — Certified Professional <em>(In Progress)</em></li>
+        </ul>
+      </section>
+
+      <!-- Contact -->
+      <section>
+        <h2>Contact</h2>
+        <p>Connect with me here:</p>
+        <ul class="contact-list">
+          <li><a href="https://github.com/RumteenHQ">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/rumteenhq">LinkedIn</a></li>
+          <li><a href="mailto:rtebyanian@deloitte.com">Email</a></li>
+        </ul>
+      </section>
+
+    </main>
+
+    <footer>
+      &copy; 2026 Rumteen Tebyanian · AI GRC Practitioner
+    </footer>
+
+  </body>
+
+</html>
