@@ -185,7 +185,50 @@
         margin: 6px 0 0;
       }
 
-      /* ── Skills ─────────────────────────────── */
+      /* ── Skills — Pill Cards ────────────────── */
+      .skill-group {
+        margin-bottom: 20px;
+      }
+
+      .skill-group:last-child {
+        margin-bottom: 0;
+      }
+
+      .skill-group-label {
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: #58a6ff;
+        margin: 0 0 10px;
+      }
+
+      .skill-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .skill-tag {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.78rem;
+        color: #c9d1d9;
+        background: #0d1117;
+        border: 1px solid #30363d;
+        border-radius: 6px;
+        padding: 4px 10px;
+        transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+        cursor: default;
+        user-select: none;
+      }
+
+      .skill-tag:hover {
+        border-color: #58a6ff66;
+        color: #58a6ff;
+        background: #58a6ff0d;
+      }
+
+      /* ── General list styles (certs/contact) ── */
       ul {
         margin: 0;
         padding: 0 0 0 20px;
@@ -320,10 +363,54 @@
       <!-- Skills -->
       <section>
         <h2>Skills</h2>
-        <ul>
-          <li><strong>Programming:</strong> SQL, Python, Java, C#, Bash, PowerShell, ASP.NET, HTML, JavaScript, JSON, UML</li>
-          <li><strong>ICAM:</strong> Oracle Identity Suite (OAM, OIM, OUD), Federated Access Management &amp; SSO (SAML, OAuth/OIDC, ADFS/wsFed, WebGate), Directory Services (LDAP/AD), Microsoft Identity Manager (MIM), NIST 800-63, HSPD-12, PingFederate, Okta, System Administration</li>
-        </ul>
+
+        <div class="skill-group">
+          <p class="skill-group-label">Programming</p>
+          <div class="skill-tags">
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Java</span>
+            <span class="skill-tag">C#</span>
+            <span class="skill-tag">Bash</span>
+            <span class="skill-tag">PowerShell</span>
+            <span class="skill-tag">ASP.NET</span>
+            <span class="skill-tag">HTML</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">JSON</span>
+            <span class="skill-tag">UML</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <p class="skill-group-label">ICAM</p>
+          <div class="skill-tags">
+            <span class="skill-tag">System Integration and Automation</span>
+            <span class="skill-tag">Oracle Identity Suite (OAM, OIM, OUD)</span>
+            <span class="skill-tag">Federation &amp; SSO (SAML, OAuth/OIDC, ADFS/wsFed)</span>
+            <span class="skill-tag">Header-Based Authentication (WebGate)</span>
+            <span class="skill-tag">System Administration</span>
+            <span class="skill-tag">Directory Services (LDAP/AD)</span>
+            <span class="skill-tag">Data Synchronization and Reconciliation</span>
+            <span class="skill-tag">Microsoft MIM</span>
+            <span class="skill-tag">NIST 800-63</span>
+            <span class="skill-tag">HSPD-12</span>
+            <span class="skill-tag">PingFederate</span>
+            <span class="skill-tag">Okta</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <p class="skill-group-label">AI GRC</p>
+          <div class="skill-tags">
+            <span class="skill-tag">AI Governance and Responsible AI Review</span>
+            <span class="skill-tag">NIST AI RMF Govern, Map, Measure, Manage</span>
+            <span class="skill-tag">ISO/IEC 42001 AI Management System Concepts</span>
+            <span class="skill-tag">EU AI Act High-Risk AI Classification Concepts</span>
+            <span class="skill-tag">AI Risk Assessment and Risk Treatment Planning</span>
+            <span class="skill-tag">AI Vendor and Third-Party Risk Review</span>
+            <span class="skill-tag">Fairness, Proxy-Bias, and Explainability Risk Analysis</span>
+          </div>
+        </div>
       </section>
 
       <!-- Certifications -->
